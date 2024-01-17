@@ -5,4 +5,12 @@ A content delivery network (CDN) is a network of interconnected servers that spe
 # CORS 
 (Cross Origin Resource Sharing) is an HTTP feature that enables a web application running under one domain to access resources in another domain.
 
-# CDN Link: https://legacy.reactjs.org/docs/cdn-links.html
+# CDN Link: 
+https://legacy.reactjs.org/docs/cdn-links.html
+
+
+# React.element
+it is nothing but a object.
+
+# render
+it will take the object and it will render or convert that object and give the html tag element which browser understand
