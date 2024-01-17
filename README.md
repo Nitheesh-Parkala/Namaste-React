@@ -14,3 +14,8 @@ it is nothing but a object.
 
 # render
 it will take the object and it will render or convert that object and give the html tag element which browser understand
+
+react will only work within the div id root only.
+
+# React
+It is a library it will work independently at the smaller portion of the app and it is not a full fledged framework.
