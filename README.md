@@ -1,22 +1,3 @@
-# Namaste-React
-# content delivery network
-A content delivery network (CDN) is a network of interconnected servers that speeds up webpage loading for data-heavy applications. CDN can stand for content delivery network or content distribution network.
-
-# CORS 
-(Cross Origin Resource Sharing) is an HTTP feature that enables a web application running under one domain to access resources in another domain.
-
-# CDN Link: 
-https://legacy.reactjs.org/docs/cdn-links.html
-
-
-# React.element
-it is nothing but a object.
-
-# render
-it will take the object and it will render or convert that object and give the html tag element which browser understand
-
-react will only work within the div id root only.
-
 # React
 It is a library it will work independently at the smaller portion of the app and it is not a full fledged framework.
 
@@ -39,6 +20,8 @@ package-lock.json -> It will use exact version of the package
 package.json it will -> keep track of the version.(It will keep the approximate version)
 
 # parcel
+Parcel is a web application bundler, differentiated by its developer experience. It offers blazing fast performance utilizing multicore processing, and requires zero configuration. Parcel can take any type of file as an entry point, but an HTML or JavaScript file is a good place to start.
+
 -Dev Build
 
 -Local server
@@ -76,3 +59,15 @@ Note: In package-lock.json file im removing  ("main": "app.js")  while running t
 
 
 -BrowsersList: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
+
+## what is dist folder
+The dist folder in React is a directory that contains the built version of your application. This includes the compiled JavaScript code, CSS, and other assets that are needed to run your application in a production environment.
+The dist folder is typically created when you run the npm run build command. This command will compile your application's source code into a distributable format. The dist folder will also contain any other files that are needed to run your application, such as images, fonts, and manifest files.
+
+Once your application is built, you can deploy the dist folder to a web server. This will make your application available to users over the internet.
+
+Here are some of the benefits of using a dist folder:
+It allows you to keep your source code separate from your built code. This makes it easier to develop and maintain your application.
+
+## documentation
+https://parceljs.org/features/production/ 
