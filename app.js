@@ -1,32 +1,23 @@
-/**
- * <div id="parent">
- *      <div id= "child1">
- *           <h1></h1>
- *           <h2></h2>
- *      </div>
- * <div id= "child2">
- *           <h1></h1>
- *           <h2></h2>
- *      </div>
- * </div>
- * ReactElement(Object) => HTML(Browser Understands)
- */
 import React from "react"
 import ReactDOM from "react-dom/client"
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-    React.createElement("div", { id: "child1" }, [
-    React.createElement("h1", {}, "Hi Im h1 Tag"),
-    React.createElement("h2", {}, "Hi Im h2 Tag"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "Hi Im h1 Tag"),
-    React.createElement("h2", {}, "Hi Im h2 Tag"),
-  ]) //if i you want to give two element has  a siblings then you have to create a array[]
+
+//React.createElement => object
+//React Element.
+const elem = <span>This is a Span tag</span>
+const title = (
+  <h1 className="head" tabIndex="1">
+    {elem} 
+    Namaste React using JSX by calling ...
+  </h1>
 );
 
-//jsx is exist to reduce the above complex code.
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+//React Functional Component.
+//Component Compositions: Composing Two components into one another.
+const HeadingComponent = () => (
+  <div>
+    {title}
+    <h1>Namaste react using functional Components.</h1>
+  </div>
+);
+const root1 = ReactDOM.createRoot(document.getElementById("root"));
+root1.render(<HeadingComponent />);
