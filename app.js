@@ -1,23 +1,19 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 
-//React.createElement => object
-//React Element.
-const elem = <span>This is a Span tag</span>
-const title = (
-  <h1 className="head" tabIndex="1">
-    {elem} 
-    Namaste React using JSX by calling ...
-  </h1>
-);
 
-//React Functional Component.
-//Component Compositions: Composing Two components into one another.
-const HeadingComponent = () => (
-  <div>
-    {title}
-    <h1>Namaste react using functional Components.</h1>
-  </div>
-);
-const root1 = ReactDOM.createRoot(document.getElementById("root"));
-root1.render(<HeadingComponent />);
+
+const Header = ()=>{
+     <div className="logo-container">
+      <img src="2wCEAAoGBw4ODhAODg4ODg8ODg4ODg4ODhAPDg4PFhIYGBYSFhQaHjgiGhw0HRYWMDQlNC07PjIxGiFDPTcwOy0wMS4BCwsLDw4PHRERHTAoIigwMDkwMDYyMDIwLi4wMDAwMDIyMDIyMDAyMDAwMDIwMjAwMDEwMDIuMjAwMTAwMC4wMP"/>
+     </div>
+     
+}
+
+const AppLayOut = ()=>{
+
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<HeadingComponent />);
