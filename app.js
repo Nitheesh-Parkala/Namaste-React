@@ -43,7 +43,7 @@ const RestaurantCard =(props)=>{
        </div>
      );
 }
-
+ 
 const resObj ={
            "card": {
           "card": {
