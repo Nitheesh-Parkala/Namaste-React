@@ -38,7 +38,7 @@ For this app we need
  whenever we r doing maping  we have to give unique key over the functional component function.
  ### note: we should not use index as  a key.
  not using key(not acceptable)<<<<  index as key  <<<<<<<<<<<<<< unique id(best practice)
-
+But  react never use index as a key it is a bad practice.
  For Json view we are using chrome extension is :
  https://chromewebstore.google.com/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh
 
