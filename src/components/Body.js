@@ -25,7 +25,8 @@ const Body = () => {
         {/* Restru component we have to do separte. */}
 
         {listOfRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <RestaurantCard key={restaurant.info.id} resData={restaurant} />    /* Getting error in Key ={restaurant.info.id}  */
+
         ))}
       </div>
     </div>
