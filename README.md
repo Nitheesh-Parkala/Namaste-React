@@ -16,3 +16,6 @@ There two very imp hooks:
 - useEffect()
 It will take two arguments
 useEffect call back function is called when a body component is rendered
+
+after Rendering the page suddenly the website will pop-up this is not  good way to write the code instead of that we can approach a two method that is we can add a Spinier to it or we can a shimmer Ui so that Using this website will look more attractive to the User who is using website.
+### (means we will load a fake page until website will shown to the user)-Shimmer.
