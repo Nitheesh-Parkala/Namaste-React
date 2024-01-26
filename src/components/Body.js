@@ -13,7 +13,7 @@ const Body = () => {
 
   useEffect(() => {
     // console.log("When Body component is rendered useEffect will rendered")
-    fetchData();
+  fetchData()
   },[]);
   // console.log("Body rendered")
 
@@ -23,6 +23,7 @@ const Body = () => {
     );
     const json = await data.json();
     console.log(json);
+    
     // Here we should use optional chaining
     setListofRestaturant(
       json?.data?.cards[4]?.card?.card.gridElements.infoWithStyle.restaurants
@@ -52,7 +53,7 @@ const Body = () => {
           <button onClick={() => {
           // filter the restaurant ard and update the UI
        const filteredRestaurant =   listOfRestaurants.filter(
-            (res)=> res.data.info.name.toLowerCase().includes(searchText.toLowerCase())
+            (res)=> res.info.name.toLowerCase().includes(searchText.toLowerCase())
           )
           setFilteredRestaurant(filteredRestaurant)
           //SearchText
