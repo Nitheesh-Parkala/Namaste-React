@@ -23,7 +23,6 @@ const Body = () => {
     );
     const json = await data.json();
     console.log(json);
-    
     // Here we should use optional chaining
     setListofRestaturant(
       json?.data?.cards[4]?.card?.card.gridElements.infoWithStyle.restaurants
