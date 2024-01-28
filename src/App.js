@@ -1,10 +1,11 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 //importing components here.
 import Header from "./components/Header";
 import Body from "./components/Body";
-
+import About from "./components/About";
+import Contact from "./components/Contact"
 const AppLayOut = ()=>{
     return (
       <div className="app">
@@ -13,6 +14,20 @@ const AppLayOut = ()=>{
       </div>
     );
 }
+const appRouter = createBrowserRouter([
+  {
+  path:"/",
+  element:<AppLayOut/>
+},
+{
+  path: "/about",
+  element:<About/>,
+},
+{
+  path: "/contact",
+  element:<Contact/> 
+},
+])
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayOut />);
+root.render(<RouterProvider router={appRouter}/>);
