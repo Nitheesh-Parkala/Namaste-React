@@ -34,5 +34,16 @@ https://blog.stackademic.com/understanding-the-differences-between-usestate-and-
 * To install this package npm i react-router-dom
 * we have to create a configuration it is nothing but what should happened on the specific route.
 * when ever we create a configuration we should need ton provide this configuration to render the route so we to add               RouterProvider. =>import { createBrowserRouter, RouterProvider }
-* 
+* we are creating the childern route to create this route we should import the packege called <Outlet> all the path will be filled inside the outlet what we given in the browser url.
+* We are Creating the link using Link to {} instaed of <a> tag beacuse link tag will not reload the whole page.
+* ## Routing in web app
+* server side routing
+* clinet side routing 
+* here we using clinet side routing because we r not calling api and network call.
 */
+
+/**
+* Dynamic routing
+* different page for different rest
+*  
+/
