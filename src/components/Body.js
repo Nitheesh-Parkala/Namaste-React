@@ -3,6 +3,7 @@ import RestaurantCard from "../components/Restaurant";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
   import { API } from "../utils/constants";
+  import { Link } from "react-router-dom";
 const Body = () => {
   /**
    * UseState Should not be written outside the body component
@@ -86,10 +87,12 @@ const Body = () => {
         {/* Restru component we have to do separte. */}
 
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard
+          <Link
             key={restaurant.info.id}
-            resData={restaurant}
-          /> /* Getting error in Key ={restaurant.info.id}  */
+            to={"/restaurant/" + restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link> /* Getting error in Key ={restaurant.info.id}  */
         ))}
       </div>
     </div>

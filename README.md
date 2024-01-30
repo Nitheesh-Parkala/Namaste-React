@@ -45,5 +45,45 @@ https://blog.stackademic.com/understanding-the-differences-between-usestate-and-
 /**
 * Dynamic routing
 * different page for different rest
-*  
+*  To use dynamic id in this application we need to import { UseParams }
 /
+
+## Some error is fixed 
+## Changelog
+
+### Version X.X.X (Date)
+
+#### User Fixes
+- Resolved the "TypeError: Cannot destructure property 'name' of '(intermediate value)' as it is undefined" issue in the `RestaurantMenu` component.
+
+#### Details
+The error in the `RestaurantMenu` component indicates that the property `resInfo.cards[0].card.card.info` is undefined, leading to an attempt to destructure `name` and `cuisines` from it. To address this issue, it's crucial to check if each nested property exists before attempting to destructure it.
+
+Here's an example of how to use optional chaining (?.) for destructuring, preventing the error by providing default values:
+
+```jsx
+const { name, cuisines } = resInfo?.cards[0]?.card?.card?.info || {};
+
+
+
+## Changelog
+
+### Version X.X.X (Date)
+
+#### Fixes
+- Resolved the issue with the error "TypeError: Cannot read properties of undefined (reading 'map')".
+
+### Details
+The error "TypeError: Cannot read properties of undefined (reading 'map')" often occurs when trying to map over an array (`itemCards`) that is undefined. To prevent this error, it's crucial to ensure that `itemCards` is defined and is an array before attempting to use the `map` function.
+
+You can utilize optional chaining (?.) to check if `itemCards` is defined before calling the `map` function. Below is an example implementation in JSX:
+
+```jsx
+{itemCards?.map((item) => (
+  <li key={item?.card?.info?.id}>
+    {item.card.info.name} Rs- {item.card.info.price}
+  </li>
+))}
+
+
+
