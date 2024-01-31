@@ -81,3 +81,8 @@
 .search{
      margin: 10px;
 }
+.about{
+    border: 1px solid black;
+    height: auto;
+    width: 300px;
+}
