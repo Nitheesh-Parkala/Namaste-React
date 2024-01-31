@@ -7,8 +7,15 @@ class UserClass extends React.Component{
       count:0,
       count2:2
     }
+    console.log("child constructor component")
+  }
+  async componentDidMount(){
+          const data = await fetch("https://api.github.com/users/akshaymarch7");
+          const json = await data.json();
+        console.log(json)
   }
  render(){
+  console.log("child render")
   const {name,contact} = this.props;
   const {count,count2}= this.state;
   return (

@@ -31,7 +31,7 @@ const Body = () => {
     console.log(json);
     // Here we should use optional chaining
     setListofRestaturant(
-      json?.data?.cards[4]?.card?.card.gridElements.infoWithStyle.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurant(
       json?.data?.cards[4]?.card?.card.gridElements.infoWithStyle.restaurants
