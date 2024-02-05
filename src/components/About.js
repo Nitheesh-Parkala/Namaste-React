@@ -6,13 +6,13 @@ import React from "react";
 class About extends React.Component {
     constructor(){
         super()
-        console.log("parent constructor")
+        // console.log("parent constructor")
     }
   componentDidMount() {
-    console.log("parent Component");
+    // console.log("parent Component");
   }
   render() {
-    console.log("parent render")
+    // console.log("parent render")+
     return (
       <div>
         <h1>About Us</h1>
