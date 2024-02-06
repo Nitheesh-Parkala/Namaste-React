@@ -1,88 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *{
     margin: 0px;
     padding: 0px;
 }
 
-.header{
-    display: flex;
-     justify-content: space-between;
-     border: 1px solid black;
-     margin: 10px;
-}
-
-.logo-container{
-    margin: 10px;
-    padding: 10px;
-}
-.logo{
-    width: 100%;
-    height: 40px;
-}
-.nav-items >ul{
-  display: flex;
-  padding: 10px;
-  list-style-type: none;
-}
-
-.nav-items >ul>li{
-  padding: 10px;
-  font-size: 20px;
-}   
-
-.res-card{
-    margin: 5px;
-    padding: 5px;
-    width: 200px;
-    height: auto;
-   
-}
-.res-card:hover{
- border: 2px solid black;
- cursor: pointer;
-}
-
-.body{
-    margin: 10px;
-}
-.searchBar{
-    padding: 10px;
-}
-.res-img{
-    width: 100%;
-}
-
-.res-container{
-    display: flex;
-    flex-wrap: wrap;   
-}
-
-.filter-btn{
-    margin: 10px;
-    cursor: pointer;
-}
-.DumyCard{
-    display: flex;
-    flex-wrap: wrap;
-}
-.DumyRestaurant{
-    margin: 15px;
-    width: 200px;
-    height: 400px;
-    background-color: #f0f0f0;
-}
-
-.login{
-    padding: 0 20px ;
-    cursor: pointer;
-}
-.filter{
-    display: flex;
-}
-.search{
-     margin: 10px;
-}
-.about{
-    border: 1px solid black;
-    height: auto;
-    width: 300px;
-}

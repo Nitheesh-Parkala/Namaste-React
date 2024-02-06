@@ -17,12 +17,12 @@ const Header = () => {
  */
 const onlineStatus = useOnlineStatus();
   return (
-    <div className="header">
+    <div className="flex  justify-between ">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} />
+        <img className="w-56 justify-center  m-4 p-2 " src={LOGO_URL} />
       </div>
-      <div className="nav-items">
-        <ul>
+      <div className="">
+        <ul className="flex m-4 p-2 justify-center space-x-6 text-lg font-bold">
           <li>Online Status: {onlineStatus ? "online" : "offline"}</li>
           <li>
             <Link to="/">Home</Link>
