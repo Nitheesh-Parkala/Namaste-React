@@ -29,9 +29,11 @@ const useBody = () => {
 
   return {
     listOfRestaurants,
+    setListOfRestaurants,
     searchText,
     setSearchText,
     filteredRestaurant,
+    setFilteredRestaurant,
   };
 };
 

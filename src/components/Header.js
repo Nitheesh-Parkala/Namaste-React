@@ -1,6 +1,8 @@
 import { useState} from "react";
 import { LOGO_URL } from "../utils/constants";
 import {Link} from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
   console.log("Header Got Rendered...");
@@ -13,7 +15,7 @@ const Header = () => {
  * (just once when the component called one time if it render once again but useEffect is not called again and again)
  * if there something on the dependency array is [btnNameReact] => useEffect is called everytime it's updated
  */
-
+const onlineStatus = useOnlineStatus();
   return (
     <div className="header">
       <div className="logo-container">
@@ -21,14 +23,18 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
+          <li>Online Status: {onlineStatus ? "online" : "offline"}</li>
           <li>
-          <Link to="/">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-          <Link to="/about">About US</Link>
+            <Link to="/grocery">Grocery</Link>
           </li>
           <li>
-          <Link to="/contact">Contact Us</Link>
+            <Link to="/about">About US</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
           </li>
           <li>Cart</li>
           <button

@@ -5,9 +5,14 @@ import useBody from "../utils/useBody";
 import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
  
-  const { listOfRestaurants, searchText, setSearchText, filteredRestaurant } =
+  const { listOfRestaurants, setListOfRestaurants, searchText, setSearchText, filteredRestaurant, setFilteredRestaurant } =
     useBody();
-// const onlineStatus = useOnlineStatus();
+const onlineStatus = useOnlineStatus();
+if(onlineStatus===false){
+  return(
+    <h1>looks like your offline</h1>
+  )
+}
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
@@ -44,7 +49,7 @@ const Body = () => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4
             );
-            setListofRestaturant(filteredList);
+            setListOfRestaurants(filteredList);
           }}
         >
           Top Rated Restaurant

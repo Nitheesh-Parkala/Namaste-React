@@ -1,25 +1,28 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
+import React, { lazy ,Suspense } from "react";
+import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 //importing components here.
 import Header from "./components/Header";
 import Body from "./components/Body";
-import About from "./components/About";
+// import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/ErrorPage";
 import RestaurantMenu from "./components/RestaurantMenu";
-const AppLayOut = ()=>{
-    return (
-      <div className="app">
-        <Header />
-        <Outlet/>  
-        {/* all the outlet will be filled according to the path */}
-        {/** if path = / */}
-        {/** if path = /about */}
-        {/** if path = /contact */} 
-      </div>
-    );
-}
+// import Grocery from "./components/Grocery";
+const Grocery = lazy(() => import("./components/Grocery"));
+const About = lazy(() => import("./components/About"));
+const AppLayOut = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Outlet />
+      {/* all the outlet will be filled according to the path */}
+      {/** if path = / */}
+      {/** if path = /about */}
+      {/** if path = /contact */}
+    </div>
+  );
+};
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -30,8 +33,16 @@ const appRouter = createBrowserRouter([
         element: <Body />,
       },
       {
+        path: "/grocery",
+        element: (
+          <Suspense fallback={<h1>we can pass Shimmer UI</h1>}>
+            <Grocery />
+            </Suspense>
+        ),
+      },
+      {
         path: "/about",
-        element: <About />,
+        element: <Suspense><About /></Suspense>
       },
       {
         path: "/contact",
@@ -39,7 +50,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/restaurant/:resId",
-        element: <RestaurantMenu/>
+        element: <RestaurantMenu />,
       },
     ],
     errorElement: <Error />,
@@ -47,4 +58,4 @@ const appRouter = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter}/>);
+root.render(<RouterProvider router={appRouter} />);
