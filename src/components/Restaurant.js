@@ -15,5 +15,19 @@ const RestaurantCard = (props) => {
     </div>
   );
 };
+export const itemOffer = (RestaurantCard) => {
+  return (props) => {
+    const { resData } = props;
+    return (
+      <div className=" ">
+        <label className="font-bold  absolute bg-blue-500 text-white rounded-lg p-2 m-4">
+          {resData?.info?.aggregatedDiscountInfoV3?.header}
+          <span> {resData?.info?.aggregatedDiscountInfoV3?.subHeader}</span>
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};
 
 export default RestaurantCard;

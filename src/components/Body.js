@@ -1,4 +1,4 @@
-import RestaurantCard from "../components/Restaurant";
+import RestaurantCard, { itemOffer } from "../components/Restaurant";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useBody from "../utils/useBody";
@@ -12,6 +12,9 @@ const Body = () => {
     filteredRestaurant,
     setFilteredRestaurant,
   } = useBody();
+  const RestaurantOffer = itemOffer(RestaurantCard);
+  // checking the discount in browser to create a HOF
+  console.log(listOfRestaurants);
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false) {
     return <h1>looks like your offline</h1>;
@@ -46,7 +49,7 @@ const Body = () => {
             Search
           </button>
         </div>
-        <div className="search m-4 p-4 flex items-center">
+        <div className="search m-4 xp-4 flex items-center">
           <button
             className="px-4 py-2 bg-blue-100 m-4 rounded-lg"
             onClick={() => {
@@ -70,7 +73,14 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurant/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {
+              /* if the restaurant is having discount show that discount other wise show normal card */
+              restaurant?.info?.aggregatedDiscountInfoV3 ? (
+                <RestaurantOffer resData={restaurant} />
+              ) : (
+                <RestaurantCard resData={restaurant} />
+              )
+            }
           </Link> /* Getting error in Key ={restaurant.info.id}  */
         ))}
       </div>
