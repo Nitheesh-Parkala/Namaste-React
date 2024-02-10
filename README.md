@@ -1,10 +1,3 @@
-## TailWind
-https://tailwindcss.com/docs/installation
+controlled and uncontrolled also we r implementing how to lifting the state up
 
-## cmd
-* npm install -D tailwindcss 
-* npm install -D tailwindcss postcss autoprefixer
-vvvnpx tailwindcss init
-* npx tailwindcss init(we are intlizeaing a file )
-
- PostCSS - a tool for transforming CSS with JavaScript(https://postcss.org/)
+here we are going to build a accordion header and data inside the body of accordion

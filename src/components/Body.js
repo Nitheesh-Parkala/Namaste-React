@@ -14,7 +14,7 @@ const Body = () => {
   } = useBody();
   const RestaurantOffer = itemOffer(RestaurantCard);
   // checking the discount in browser to create a HOF
-  console.log(listOfRestaurants);
+  // console.log(listOfRestaurants);
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false) {
     return <h1>looks like your offline</h1>;
