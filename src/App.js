@@ -1,4 +1,4 @@
-import React, { lazy ,Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 //importing components here.
@@ -11,16 +11,21 @@ import RestaurantMenu from "./components/RestaurantMenu";
 // import Grocery from "./components/Grocery";
 const Grocery = lazy(() => import("./components/Grocery"));
 const About = lazy(() => import("./components/About"));
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 const AppLayOut = () => {
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-      {/* all the outlet will be filled according to the path */}
-      {/** if path = / */}
-      {/** if path = /about */}
-      {/** if path = /contact */}
-    </div>
+    <Provider store={appStore}>
+      <div className="app">
+        <Header />
+        <Outlet />
+        {/* all the outlet will be filled according to the path */}
+        {/** if path = / */}
+        {/** if path = /about */}
+        {/** if path = /contact */}
+      </div>
+    </Provider>
   );
 };
 const appRouter = createBrowserRouter([
@@ -37,12 +42,16 @@ const appRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<h1>we can pass Shimmer UI</h1>}>
             <Grocery />
-            </Suspense>
+          </Suspense>
         ),
       },
       {
         path: "/about",
-        element: <Suspense><About /></Suspense>
+        element: (
+          <Suspense>
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: "/contact",
@@ -51,6 +60,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:resId",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
     errorElement: <Error />,

@@ -1,3 +1,9 @@
-controlled and uncontrolled also we r implementing how to lifting the state up
+When we Click on the add button It will dispatch the action and it will call the function called reducer and it will modify or update a Slice of the redux store.
 
-here we are going to build a accordion header and data inside the body of accordion
+## Redux Toolkit
+- Install @reduxjs/toolkit and  react-redux
+- Build Our Store
+- Connect our store to app
+- Create the Slice
+-dispatch(action)
+-Selector
